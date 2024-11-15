@@ -1,26 +1,16 @@
 import streamlit as st
-from PIL import Image
 
-# List of example file paths
-examples = [
-    "imgs/banana.jpg",
-    "imgs/bus.jpg",
-    "imgs/arc.jpg"
-]
+st.title("IT Betyár Streamlit minta")
+st.subheader("I am a subheader!")
 
-# Dropdown or radio button for selecting examples
-st.sidebar.header("Select an example")
-selected_example = st.sidebar.radio("Choose an image", examples)
+st.write("Sima write elem")
+st.write("Ezt a sort a github codespace-ben hoztam létre")
 
-# Display the selected example
-if selected_example:
-    st.image(Image.open(selected_example), caption=f"Selected: {selected_example}")
+st.text(" Ez egy sima **text**, mint ilyen a csillagok nem \"bold-olnak\" semmit")
+st.markdown("---")
 
-# Upload image functionality
-st.header("Upload your image")
-uploaded_file = st.file_uploader("Choose a file", type=["jpg", "png", "jpeg"])
+st.markdown("[Google link](https://www.google.com)")
 
-# Display uploaded image
-if uploaded_file:
-    image = Image.open(uploaded_file)
-    st.image(image, caption="Uploaded Image")
+st.image("kep.jpg", caption="Valami", width=150)
+
+st.audio("zene.mp3")
